@@ -86,6 +86,15 @@ StencilGenerator = yeoman.generators.Base.extend({
 			this.fs.copyTpl(this.templatePath("Application/StockFeature.txt"), projectFile("StockFeature.txt"), this);
 			this.fs.copyTpl(this.templatePath("Application/StockStepDefinitions.fs"), projectFile("StockStepDefinitions.fs"), this);
 
+			this.fs.copyTpl(this.templatePath("build/build.fsx"), buildFile("build.fsx"), this);
+			this.fs.copyTpl(this.templatePath("build/build.cmd"), buildFile("build.cmd"), this);
+			this.fs.copyTpl(this.templatePath("build/build.sh"), buildFile("build.sh"), this);
+			
+			this.fs.copyTpl(this.templatePath("build/.nuget/NuGet.Config"), nugetFile("NuGet.Config"), this);
+			this.fs.copy(this.templatePath("build/.nuget/NuGet.exe"), nugetFile("NuGet.exe"), this);
+			this.fs.copyTpl(this.templatePath("build/.nuget/NuGet.targets"), nugetFile("NuGet.targets"), this);
+			this.fs.copyTpl(this.templatePath("build/.nuget/packages.config"), nugetFile("packages.config"), this);
+			
             switch (this.type.id) {
             case "bdd":
             {
@@ -121,6 +130,10 @@ StencilGenerator = yeoman.generators.Base.extend({
 
             function projectFile(file) {
                 return self.destinationPath(self.applicationDirectory + "/" + self.applicationName + "/" + file);
+            }
+			
+			function nugetFile(file) {
+                return self.destinationPath(self.applicationDirectory + "/build/.nuget/" + file);
             }
         }
     },
