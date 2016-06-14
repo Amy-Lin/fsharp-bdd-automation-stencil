@@ -144,9 +144,10 @@ StencilGenerator = yeoman.generators.Base.extend({
         this.log("\r\n");
         this.log(chalk.cyan(this.destinationPath(this.applicationDirectory)));
         this.log("\r\n");
-        this.log("You can use the following commands to get going");
+        this.log("Check the build command in build folder to get going. For example, issue the following command");
         this.log("\r\n");
-        this.log(chalk.green("   build") + "              compile test and build docker image");
+		this.log(chalk.green("   cd build") + "               go to build folder");
+        this.log(chalk.green("   build.cmd") + "              compile and run test");
         this.log("\r\n");
     }
 });
