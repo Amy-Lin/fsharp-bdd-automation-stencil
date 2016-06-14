@@ -98,16 +98,16 @@ StencilGenerator = yeoman.generators.Base.extend({
             switch (this.type.id) {
             case "bdd":
             {
-                //this.sourceRoot(sourceRoot + "/console");
                 break;
             }
             case "bdd-canopy":
             {
-                //this.sourceRoot(sourceRoot + "/webapi");
-                //this.fs.copyTpl(this.templatePath("src/Application/Program.cs"), projectFile("Program.cs"), this);
-                //this.fs.copyTpl(this.templatePath("src/Application/Application.csproj"), projectFile(this.applicationName + ".csproj"), this);
-                //this.fs.copyTpl(this.templatePath("src/Application/packages.config"), projectFile("packages.config"), this);
-
+				this.sourceRoot(sourceRoot + "/canopy");
+				this.fs.copyTpl(this.templatePath("packages.config"), projectFile("packages.config"), this);
+                this.fs.copyTpl(this.templatePath("Application.fsproj"), projectFile(this.applicationName + ".fsproj"), this);	
+                this.fs.copyTpl(this.templatePath("Fixtures.fs"), projectFile("Fixtures.fs"), this);
+				this.fs.copyTpl(this.templatePath("CanopyTestFeature.txt"), projectFile("CanopyTestFeature.txt"), this);
+				this.fs.copyTpl(this.templatePath("CanopyTestFeatureStepDefinitions.fs"), projectFile("CanopyTestFeatureStepDefinitions.fs"), this);
                 break;
             }
             }

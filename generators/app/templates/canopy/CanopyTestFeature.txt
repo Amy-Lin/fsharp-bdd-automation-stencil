@@ -1,0 +1,6 @@
+﻿Feature: Demo canopy test
+
+Scenario 1: Test button
+	Given a customer open canopy test page
+	When the clickMe button is clicked
+	Then the text 'button clicked' should shows up
