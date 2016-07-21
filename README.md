@@ -1,5 +1,12 @@
 ## F# BDD Automation Test Stencil
-This stencil generates F# BDD automation test samples in two types:
+This stencil generates examples of automation test project in BDD style with F# language. 
+
+Using this stencil, you will be able to create an automation project in F# and with the following framework:
+* [TickSpec](https://tickspec.codeplex.com/), which enables BDD style of test spec.
+* [NUnit](http://www.nunit.org/), which enables running the test in build command line and also generating NUnit test report (It's handy when I use it to integrate with CI build server TeamCity).
+* [Canopy](https://lefthandedgoat.github.io/canopy/index.html) (optional), which is a wrapper of Selenium Webdriver and has nice and neat API for writing UI test.
+
+It can create the following two types project (with or without UI):
 * BDD automation test sample using TickSpec
 * BDD automation test using TickSpec with canopy UI automation sample
 
@@ -29,3 +36,5 @@ npm link
 yo FSharpBDDTest
 ```
 * Follow the onscreen prompts
+
+A more detailed instruction on how to use this stencil can be found [here](http://amyandlucy.blogspot.com.au/2016/07/a-stencil-to-setup-f-bdd-automation.html)
